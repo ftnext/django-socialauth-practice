@@ -1,0 +1,7 @@
+<h1>ホーム</h1>
+{% if user.is_authenticated %}
+  <span>Hello, {{ user.username }}</span>
+  <a class="nav-link" href="{% url 'logout' %}">ログアウト</a>
+{% else %}
+  <a href="{% url 'social:begin' 'facebook' %}">Facebookログイン</a>
+{% endif %}
